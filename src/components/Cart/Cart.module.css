@@ -1,0 +1,128 @@
+/** @format */
+
+.cartContainer {
+	max-width: 800px;
+	margin: 2rem auto;
+	padding: 2rem;
+	background-color: #0b0f17;
+	color: #e2e8f0;
+	border-radius: 16px;
+	box-shadow: 0 0 20px rgba(0, 255, 204, 0.15);
+	font-family: "Orbitron", sans-serif;
+	transition: background-color var(--transition-speed);
+}
+
+.cartTitle {
+	font-size: 2rem;
+	text-align: center;
+	color: #2af0dc;
+	margin-bottom: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.cartItem {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 1.2rem;
+	margin-bottom: 1rem;
+	border-radius: 12px;
+	background-color: #141a24;
+	border: 1px solid rgba(42, 240, 220, 0.2);
+	box-shadow: 0 0 12px rgba(42, 240, 220, 0.1);
+	transition: transform var(--transition-speed);
+}
+
+.cartItem:hover {
+	transform: translateY(-2px);
+}
+
+.productImage {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 10px;
+	border: 2px solid #b25fff;
+}
+
+.itemInfo {
+	flex: 1;
+}
+
+.itemName {
+	font-weight: bold;
+	font-size: 1.1rem;
+	margin-bottom: 0.25rem;
+	color: #b25fff;
+}
+
+.itemPrice {
+	font-size: 0.95rem;
+	color: #a0aec0;
+}
+
+.removeButton {
+	background: #b25fff;
+	color: #fff;
+	border: none;
+	padding: 0.6rem 1rem;
+	border-radius: 8px;
+	font-weight: bold;
+	box-shadow: 0 0 10px rgba(178, 95, 255, 0.5);
+	cursor: pointer;
+	transition: all var(--transition-speed);
+	text-transform: uppercase;
+}
+
+.removeButton:hover {
+	background-color: #9b4ae0;
+	box-shadow: 0 0 16px rgba(178, 95, 255, 0.7);
+	transform: scale(1.05);
+}
+
+.cartSummary {
+	text-align: right;
+	margin-top: 2rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #e2e8f0;
+}
+
+.checkoutButton {
+	width: 100%;
+	background: linear-gradient(135deg, #2af0dc, #b25fff);
+	color: white;
+	padding: 1rem 0;
+	border: none;
+	border-radius: 12px;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	box-shadow: 0 0 14px rgba(42, 240, 220, 0.4);
+	transition: all var(--transition-speed);
+	position: relative;
+	overflow: hidden;
+}
+
+.checkoutButton::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.1);
+	transform: skewX(-20deg);
+	transition: left 0.4s ease;
+}
+
+.checkoutButton:hover {
+	background: linear-gradient(135deg, #22c6b8, #9b4ae0);
+	box-shadow: 0 0 22px rgba(42, 240, 220, 0.7);
+	transform: translateY(-2px);
+}
+
+.checkoutButton:hover::after {
+	left: 100%;
+}

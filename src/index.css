@@ -1,0 +1,73 @@
+/**
+ * /* 🎮 Estilos base para Arcadia SPA
+ *
+ * @format
+ */
+
+/* 🌈 Variables globales */
+:root {
+	--color-primary: #00ffcc;
+	--color-accent: #ff0099;
+	--color-bg: #000000;
+	--color-text: #ffffff;
+	--font-main: "Orbitron", sans-serif;
+	--transition-speed: 0.3s;
+}
+
+/* 🧼 Reset básico */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* 🖥️ Body layout */
+body {
+	font-family: var(--font-main);
+	background-color: var(--color-bg);
+	color: var(--color-text);
+	line-height: 1.6;
+}
+
+/* 🧭 Navegación */
+a {
+	text-decoration: none;
+	color: var(--color-primary);
+	transition: color var(--transition-speed);
+}
+
+a:hover {
+	color: var(--color-accent);
+}
+
+a.active {
+	font-weight: bold;
+	border-bottom: 2px solid var(--color-primary);
+}
+
+/* 🧱 Header y Footer */
+header,
+footer {
+	background-color: var(--color-accent);
+	padding: 1rem 2rem;
+	text-align: center;
+}
+
+/* 📦 Contenido principal */
+main {
+	padding: 2rem;
+	min-height: 80vh;
+	transition: all var(--transition-speed);
+}
+
+/* 📱 Responsivo básico */
+@media (max-width: 768px) {
+	main {
+		padding: 1rem;
+	}
+
+	header,
+	footer {
+		padding: 1rem;
+	}
+}

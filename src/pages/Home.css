@@ -1,0 +1,59 @@
+/* Home.css */
+
+.home {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Section */
+.category-section {
+    text-align: center;
+}
+
+.category-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Featured Section (opcional) */
+.featured-section {
+    text-align: center;
+}
+
+.featured-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .home {
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    .hero-section {
+        height: 250px;
+    }
+
+    .category-title,
+    .featured-title {
+        font-size: 1.5rem;
+    }
+}

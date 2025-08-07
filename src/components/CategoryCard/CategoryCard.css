@@ -1,0 +1,30 @@
+.category-card {
+    background-color: #1a1a1a;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.category-card:hover {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px #00ffff;
+    transform: scale(1.05);
+}
+
+.category-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(0 0 5px #00ffff55);
+}
+
+.category-card h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin: 0;
+}
