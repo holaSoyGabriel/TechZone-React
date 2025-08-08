@@ -17,7 +17,7 @@ const ItemCard = ({ producto }) => {
 	if (!nombre || !precio || !imagen) {
 		return (
 			<div className="product-card error-card">
-				<p>⚠️ Datos incompletos para este producto.</p>
+				<p>Datos incompletos para este producto.</p>
 			</div>
 		);
 	}
