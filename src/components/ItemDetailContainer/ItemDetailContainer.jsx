@@ -8,7 +8,6 @@ const ItemDetailContainer = ({ productId }) => {
 	const [product, setProduct] = useState(null);
 
 	useEffect(() => {
-		// Simulando fetch desde Firebase (esto lo reemplazás con tu lógica real)
 		const fetchProduct = async () => {
 			const mockProduct = {
 				id: productId,

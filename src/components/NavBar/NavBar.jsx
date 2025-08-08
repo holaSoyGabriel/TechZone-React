@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-import "./Navbar.css";
+import "./NavBar.css";
 
 const Navbar = ({ onSearch, showSearchBar }) => {
     const { cart } = useContext(CartContext);

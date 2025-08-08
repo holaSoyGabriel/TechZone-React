@@ -31,7 +31,7 @@
 	box-shadow: 0 0 10px #00ffe7;
 }
 
-/* 🧩 Grid de productos */
+
 .products-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useCart } from "../../context/useCart";
 import { db } from "../../firebase/config";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
-import emailjs from "@emailjs/browser"; // 🆕 EmailJS
+import emailjs from "@emailjs/browser";
 import styles from "./CheckoutForm.module.css";
 
 const CheckoutForm = () => {
@@ -29,10 +29,10 @@ const CheckoutForm = () => {
 
         try {
             await emailjs.send(
-                "tu_service_id",     // reemplaza con tu ID real
-                "tu_template_id",    // reemplaza con tu ID real
+                "tu_service_id",     
+                "tu_template_id",    
                 templateParams,
-                "tu_public_key"      // reemplaza con tu clave pública
+                "tu_public_key"     
             );
             console.log("Correo enviado con éxito");
         } catch (error) {
@@ -54,7 +54,7 @@ const CheckoutForm = () => {
         try {
             const docRef = await addDoc(collection(db, "ordenes"), orden);
             setOrderId(docRef.id);
-            await sendEmail(); // 🆕 Enviar correo
+            await sendEmail(); 
             clearCart();
         } catch (error) {
             console.error("Error al generar la orden:", error);
@@ -66,7 +66,7 @@ const CheckoutForm = () => {
     if (orderId) {
         return (
             <div className={styles.confirmation}>
-                <h2>✅ ¡Gracias por tu compra!</h2>
+                <h2>¡Gracias por tu compra!</h2>
                 <p>
                     Tu ID de orden es: <strong>{orderId}</strong>
                 </p>
@@ -134,7 +134,7 @@ const CheckoutForm = () => {
             </div>
 
             <p className={styles.total}>
-                🧾 Total: <strong>${total.toFixed(2)}</strong>
+               Total: <strong>${total.toFixed(2)}</strong>
             </p>
 
             <button
