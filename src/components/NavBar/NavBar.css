@@ -107,3 +107,31 @@
 .search-container input:focus {
 	box-shadow: none;
 }
+
+.checkout-link {
+	padding: 0.4rem 0.8rem;
+	border-radius: 6px;
+	background-color: transparent;
+	color: var(--color-primary);
+	font-weight: bold;
+	text-decoration: none;
+	transition: 0.3s ease;
+	border: 2px solid var(--color-primary);
+	box-shadow: 0 0 8px var(--color-primary);
+}
+
+.checkout-link:hover {
+	transform: scale(1.05);
+	color: var(--color-accent);
+	border-color: var(--color-accent);
+	box-shadow: 0 0 12px var(--color-accent);
+}
+
+.checkout-link.disabled {
+	pointer-events: none;
+	opacity: 0.4;
+	background-color: #444;
+	color: #ccc;
+	box-shadow: none;
+	cursor: not-allowed;
+}

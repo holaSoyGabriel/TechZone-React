@@ -48,19 +48,72 @@
 	line-height: 1.4;
 }
 
-/* Precio y botón */
+/* Footer con precio y botón */
 .product-footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
+/* Precio sin descuento */
 .price {
 	color: #1b76d2;
 	font-weight: bold;
 	font-size: 1.1rem;
 }
 
+/* Grupo de precios con descuento */
+.price-group {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.3rem;
+}
+
+/* Precio original tachado */
+.price-original {
+	text-decoration: line-through;
+	color: #888;
+	font-size: 0.9rem;
+}
+
+/* Precio final con neón */
+.price-discounted {
+	color: #00ffcc;
+	font-weight: bold;
+	font-size: 1.2rem;
+	text-shadow: 0 0 6px #00ffcc;
+}
+
+/* Etiqueta de descuento */
+.discount-tag {
+	background-color: #ff00cc;
+	color: #000;
+	padding: 0.2rem 0.5rem;
+	border-radius: 6px;
+	font-size: 0.8rem;
+	font-weight: bold;
+	box-shadow: 0 0 8px #ff00cc;
+	animation: pulse 1.5s infinite;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		box-shadow: 0 0 8px #ff00cc;
+	}
+	50% {
+		transform: scale(1.05);
+		box-shadow: 0 0 12px #ff00cc;
+	}
+	100% {
+		transform: scale(1);
+		box-shadow: 0 0 8px #ff00cc;
+	}
+}
+
+/* Botón */
 .product-card button {
 	background-color: #1b76d2;
 	color: #fff;

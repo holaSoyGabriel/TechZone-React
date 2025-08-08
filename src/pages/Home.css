@@ -1,59 +1,104 @@
-/* Home.css */
+/** @format */
 
 .home {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
+	padding: 2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	background-color: #0f0f0f;
+	color: var(--color-text);
 }
 
 /* Hero Section */
 .hero-section {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	position: relative;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #111111, #000000);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.hero-section h1 {
+	font-size: 3rem;
+	color: var(--color-primary);
+	text-shadow: 0 0 12px var(--color-primary);
+	margin-bottom: 1rem;
+}
+
+.hero-section p {
+	font-size: 1.2rem;
+	color: #ccc;
+	max-width: 600px;
+}
+
+.hero-section button {
+	margin-top: 2rem;
+	padding: 12px 24px;
+	background-color: var(--color-primary);
+	color: #000;
+	border: none;
+	border-radius: 8px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	box-shadow: 0 0 10px var(--color-primary);
+}
+
+.hero-section button:hover {
+	background-color: var(--color-accent);
+	box-shadow: 0 0 20px var(--color-accent);
 }
 
 /* Category Section */
 .category-section {
-    text-align: center;
+	text-align: center;
 }
 
 .category-title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #333;
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--color-primary);
+	text-shadow: 0 0 8px var(--color-primary);
 }
 
-/* Featured Section (opcional) */
+/* Featured Section */
 .featured-section {
-    text-align: center;
+	text-align: center;
 }
 
 .featured-title {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #333;
+	font-size: 2.2rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	color: var(--color-accent);
+	text-shadow: 0 0 8px var(--color-accent);
 }
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-    .home {
-        padding: 1rem;
-        gap: 2rem;
-    }
+	.home {
+		padding: 1rem;
+		gap: 2rem;
+	}
 
-    .hero-section {
-        height: 250px;
-    }
+	.hero-section {
+		height: 250px;
+	}
 
-    .category-title,
-    .featured-title {
-        font-size: 1.5rem;
-    }
+	.hero-section h1 {
+		font-size: 2rem;
+	}
+
+	.category-title,
+	.featured-title {
+		font-size: 1.5rem;
+	}
 }

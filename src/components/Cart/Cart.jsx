@@ -1,16 +1,12 @@
 /** @format */
-import { useCart } from "../../context/useCart";
 
+import { useCart } from "../../context/useCart";
+import { useNavigate } from "react-router-dom";
 import styles from "./Cart.module.css";
 
 const Cart = () => {
-	const { cart, removeFromCart } = useCart();
-
-	// ✅ Evita NaN verificando que item.cantidad exista
-	const total = cart.reduce((acc, item) => {
-		const cantidad = item.cantidad ?? 1; // Default a 1 si está undefined
-		return acc + item.precio * cantidad;
-	}, 0);
+	const { cart, removeFromCart, total, enableCheckout } = useCart();
+	const navigate = useNavigate();
 
 	return (
 		<div className={styles.cartContainer}>
@@ -21,18 +17,38 @@ const Cart = () => {
 			) : (
 				cart.map((item) => {
 					const cantidad = item.cantidad ?? 1;
+					const precioUnitario = item.finalPrice ?? item.precio;
 
 					return (
 						<div key={item.id} className={styles.cartItem}>
 							<img
-								src={item.image || "/placeholder.jpg"}
+								src={item.imagen || "/placeholder.jpg"}
 								alt={item.nombre}
 								className={styles.productImage}
 							/>
 							<div className={styles.itemInfo}>
 								<p className={styles.itemName}>{item.nombre}</p>
 								<p className={styles.itemPrice}>
-									${item.precio} × {cantidad}
+									{item.discount > 0 ? (
+										<>
+											<span className={styles.originalPrice}>
+												${item.precio.toFixed(2)}
+											</span>{" "}
+											× {cantidad}
+											<br />
+											<span className={styles.discountedPrice}>
+												${precioUnitario.toFixed(2)} c/u
+											</span>
+											<br />
+											<span className={styles.discountTag}>
+												-{item.discount}%
+											</span>
+										</>
+									) : (
+										<>
+											${item.precio.toFixed(2)} × {cantidad}
+										</>
+									)}
 								</p>
 							</div>
 							<button
@@ -50,7 +66,15 @@ const Cart = () => {
 				<div className={styles.cartSummary}>
 					Total: ${total.toFixed(2)}
 					<br />
-					<button className={styles.checkoutButton}>Finalizar compra</button>
+					<button
+						className={styles.checkoutButton}
+						onClick={() => {
+							enableCheckout();
+							navigate("/checkout");
+						}}
+					>
+						Finalizar compra
+					</button>
 				</div>
 			)}
 		</div>

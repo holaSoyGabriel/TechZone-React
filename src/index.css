@@ -1,35 +1,50 @@
 /**
- * /* 🎮 Estilos base para Arcadia SPA
  *
  * @format
  */
 
-/* 🌈 Variables globales */
 :root {
-	--color-primary: #00ffcc;
+	--color-primary: #00d4b4;
 	--color-accent: #ff0099;
 	--color-bg: #000000;
 	--color-text: #ffffff;
 	--font-main: "Orbitron", sans-serif;
 	--transition-speed: 0.3s;
+
+	--max-width: 1200px;
+	--spacing: 2rem;
+	--radius: 12px;
+	--shadow-neon: 0 0 20px var(--color-primary);
 }
 
-/* 🧼 Reset básico */
-* {
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* 🖥️ Body layout */
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: var(--font-main);
 	background-color: var(--color-bg);
 	color: var(--color-text);
 	line-height: 1.6;
+	overflow-x: hidden;
 }
 
-/* 🧭 Navegación */
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: var(--radius);
+}
+
 a {
 	text-decoration: none;
 	color: var(--color-primary);
@@ -45,23 +60,64 @@ a.active {
 	border-bottom: 2px solid var(--color-primary);
 }
 
-/* 🧱 Header y Footer */
 header,
 footer {
 	background-color: var(--color-accent);
-	padding: 1rem 2rem;
+	padding: var(--spacing);
 	text-align: center;
+	color: var(--color-bg);
+	box-shadow: var(--shadow-neon);
 }
 
-/* 📦 Contenido principal */
 main {
-	padding: 2rem;
+	padding: var(--spacing);
 	min-height: 80vh;
 	transition: all var(--transition-speed);
+	max-width: var(--max-width);
+	margin: 0 auto;
 }
 
-/* 📱 Responsivo básico */
+.container {
+	width: 90%;
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: var(--spacing);
+}
+
+.flex {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+}
+
+.btn {
+	padding: 0.8rem 1.2rem;
+	border: none;
+	border-radius: var(--radius);
+	background-color: var(--color-primary);
+	color: var(--color-bg);
+	font-weight: bold;
+	cursor: pointer;
+	transition: var(--transition-speed);
+	box-shadow: var(--shadow-neon);
+}
+
+.btn:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px var(--color-accent);
+}
+
 @media (max-width: 768px) {
+	html {
+		font-size: 15px;
+	}
+
 	main {
 		padding: 1rem;
 	}
@@ -69,5 +125,9 @@ main {
 	header,
 	footer {
 		padding: 1rem;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
 	}
 }
