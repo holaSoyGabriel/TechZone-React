@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/config";
 import CategoryCard from "../CategoryCard/CategoryCard";
-import "./CategoryGrid.css";
+import "./Categorygrid.css";
 
 const CategoryGrid = () => {
     const [categorias, setCategorias] = useState([]);
