@@ -1,6 +1,6 @@
 /** @format */
 
-import { useCart } from "../../context/useCart";
+import { useCart } from "../../context/UseCart";
 import { useNavigate } from "react-router-dom";
 import styles from "./Cart.module.css";
 
