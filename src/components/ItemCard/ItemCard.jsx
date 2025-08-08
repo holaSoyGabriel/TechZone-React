@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import "./ItemCard.css";
+import "./itemCard.css";
 import { useCart } from "../../context/useCart";
 import Swal from "sweetalert2";
 
