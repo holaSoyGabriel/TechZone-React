@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
-import { useCart } from "../../context/useCart";
+import { useCart } from "../../context/UseCart";
 import { db } from "../../firebase/config";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
