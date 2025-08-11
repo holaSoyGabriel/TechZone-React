@@ -24,6 +24,21 @@
 	}
 }
 
+@keyframes cartPulse {
+	0% {
+		text-shadow: 0 0 5px #ffeb3b, 0 0 10px #fdd835;
+		transform: scale(1);
+	}
+	50% {
+		text-shadow: 0 0 15px #fff176, 0 0 30px #fbc02d;
+		transform: scale(1.1);
+	}
+	100% {
+		text-shadow: 0 0 5px #ffeb3b, 0 0 10px #fdd835;
+		transform: scale(1);
+	}
+}
+
 .logo {
 	font-size: 2.4rem;
 	color: var(--color-accent);
@@ -55,14 +70,16 @@
 }
 
 .cart-icon a {
-	font-size: 1.5rem;
-	color: var(--color-primary);
+	font-size: 1.8rem;
+	color: #ffeb3b;
+	animation: cartPulse 2s infinite ease-in-out;
+	text-shadow: 0 0 8px #fdd835, 0 0 16px #fbc02d;
 	transition: transform var(--transition-speed);
 }
 
 .cart-icon a:hover {
-	transform: scale(1.1);
-	color: var(--color-accent);
+	transform: scale(1.2);
+	text-shadow: 0 0 20px #fff176, 0 0 40px #fbc02d;
 }
 
 .search-container {
