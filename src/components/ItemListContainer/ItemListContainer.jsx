@@ -6,11 +6,11 @@ import { db } from "../../firebase/config";
 import ItemCard from "../ItemCard/ItemCard";
 import "./ItemListContainer.css";
 
+// Import dinámico desde src/assets
+const imagenes = import.meta.glob("/src/assets/*.jpg", { eager: true });
+
 const ItemListContainer = ({ searchQuery, categoryFilter }) => {
 	const [productos, setProductos] = useState([]);
-	const [images] = useState(
-		import.meta.glob("/src/assets/*.jpg", { eager: true })
-	);
 
 	useEffect(() => {
 		const unsubscribe = onSnapshot(collection(db, "productos"), (snapshot) => {
@@ -22,12 +22,17 @@ const ItemListContainer = ({ searchQuery, categoryFilter }) => {
 					return null;
 				}
 
+				const rutaImagen = `/src/assets/${data.imagen}`;
+				const imagenLocal = imagenes[rutaImagen];
+
+				if (!imagenLocal) {
+					console.warn(`⚠️ Imagen no encontrada: ${data.imagen}`);
+				}
+
 				return {
 					id: doc.id,
 					...data,
-					imagen:
-						images[`/src/assets/${data.imagen}`]?.default ||
-						"/src/assets/placeholder.jpg",
+					image: imagenLocal?.default || "/assets/default.jpg", // ← estandarizado
 				};
 			});
 
@@ -51,17 +56,16 @@ const ItemListContainer = ({ searchQuery, categoryFilter }) => {
 	});
 
 	return (
-    <div className="products-grid">
-        {productosFiltrados.length > 0 ? (
-            productosFiltrados.map((prod) => (
-                <ItemCard key={prod.id} producto={prod} />
-            ))
-        ) : (
-            <p className="no-results">No hay productos en esta categoría.</p>
-        )}
-    </div>
-);
-
+		<div className="products-grid">
+			{productosFiltrados.length > 0 ? (
+				productosFiltrados.map((prod) => (
+					<ItemCard key={prod.id} producto={prod} />
+				))
+			) : (
+				<p className="no-results">No hay productos en esta categoría.</p>
+			)}
+		</div>
+	);
 };
 
 export default ItemListContainer;

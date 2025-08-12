@@ -47,7 +47,7 @@ const ItemCard = ({ producto }) => {
 
 	return (
 		<div className="product-card">
-			<img src={imagen} alt={nombre} />
+			<img src={producto.image} alt={producto.name} />
 			<div className="product-info">
 				<h3>{nombre}</h3>
 				<p className="description">{descripcion}</p>

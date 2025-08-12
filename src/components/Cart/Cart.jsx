@@ -1,6 +1,6 @@
 /** @format */
 
-import { useCart } from '../../context/useCart';
+import { useCart } from "../../context/useCart";
 import { useNavigate } from "react-router-dom";
 import styles from "./Cart.module.css";
 
@@ -22,10 +22,13 @@ const Cart = () => {
 					return (
 						<div key={item.id} className={styles.cartItem}>
 							<img
-								src={item.imagen || "/placeholder.jpg"}
+								src={
+									item.image || item.imagen || item.img || "/placeholder.jpg"
+								}
 								alt={item.nombre}
 								className={styles.productImage}
 							/>
+
 							<div className={styles.itemInfo}>
 								<p className={styles.itemName}>{item.nombre}</p>
 								<p className={styles.itemPrice}>

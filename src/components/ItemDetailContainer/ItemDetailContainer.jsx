@@ -3,14 +3,17 @@
 // src/components/ItemDetailContainer/ItemDetailContainer.jsx
 
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = ({ productId }) => {
+const ItemDetailContainer = () => {
+	const { id } = useParams(); // ← Captura el ID desde la URL
 	const [product, setProduct] = useState(null);
 
 	useEffect(() => {
 		const fetchProduct = async () => {
+			// Simulación de producto con ID dinámico
 			const mockProduct = {
-				id: productId,
+				id,
 				name: "Producto Genial",
 				price: 29.99,
 				description: "Este producto es increíble y mejora tu vida.",
@@ -21,7 +24,7 @@ const ItemDetailContainer = ({ productId }) => {
 		};
 
 		fetchProduct();
-	}, [productId]);
+	}, [id]);
 
 	if (!product) return <p>Cargando detalles...</p>;
 

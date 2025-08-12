@@ -23,6 +23,7 @@
 	align-items: center;
 	text-align: center;
 	box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+	padding: 1rem;
 }
 
 .hero-section h1 {
@@ -36,6 +37,7 @@
 	font-size: 1.2rem;
 	color: #ccc;
 	max-width: 600px;
+	margin: 0 auto;
 }
 
 .hero-section button {
@@ -49,6 +51,7 @@
 	cursor: pointer;
 	transition: all 0.3s ease;
 	box-shadow: 0 0 10px var(--color-primary);
+	font-size: 1rem;
 }
 
 .hero-section button:hover {
@@ -59,6 +62,7 @@
 /* Category Section */
 .category-section {
 	text-align: center;
+	padding: 0 1rem;
 }
 
 .category-title {
@@ -72,6 +76,7 @@
 /* Featured Section */
 .featured-section {
 	text-align: center;
+	padding: 0 1rem;
 }
 
 .featured-title {
@@ -90,15 +95,45 @@
 	}
 
 	.hero-section {
-		height: 250px;
+		height: auto;
+		padding: 2rem 1rem;
 	}
 
 	.hero-section h1 {
 		font-size: 2rem;
 	}
 
+	.hero-section p {
+		font-size: 1rem;
+	}
+
+	.hero-section button {
+		padding: 10px 20px;
+		font-size: 0.9rem;
+	}
+
 	.category-title,
 	.featured-title {
-		font-size: 1.5rem;
+		font-size: 1.6rem;
+	}
+}
+
+@media (max-width: 480px) {
+	.hero-section h1 {
+		font-size: 1.6rem;
+	}
+
+	.hero-section p {
+		font-size: 0.95rem;
+	}
+
+	.hero-section button {
+		padding: 8px 16px;
+		font-size: 0.85rem;
+	}
+
+	.category-title,
+	.featured-title {
+		font-size: 1.4rem;
 	}
 }
